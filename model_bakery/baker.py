@@ -511,7 +511,7 @@ class Baker(object):
         `attr_mapping` and `type_mapping` can be defined easily overwriting the
         model.
         """
-        is_content_type_fk = issubclass(field, ForeignKey) and issubclass(
+        is_content_type_fk = issubclass(field.__class__, ForeignKey) and issubclass(
             self._remote_field(field).model, contenttypes.models.ContentType
         )
 
