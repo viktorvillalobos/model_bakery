@@ -515,6 +515,8 @@ class Baker(object):
             self._remote_field(field).model, contenttypes.models.ContentType
         )
 
+        raise Exception(is_content_type_fk)
+
         if field.has_default():
             if callable(field.default):
                 return field.default()
